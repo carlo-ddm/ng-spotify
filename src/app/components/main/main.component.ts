@@ -13,11 +13,10 @@ export class MainComponent implements OnInit {
 
   constructor(private http: HttpService){}
 
-  music!:Albums;
+  music:Albums[] = []
 
   ngOnInit(): void {
     this.getApi()
-
   }
 
   getApi(){

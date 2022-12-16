@@ -16,6 +16,7 @@ export class HttpService {
 
   endpoint = 'https://flynn.boolean.careers/exercises/api/array/music'
 
+  // Concettualente, è nel servizio che avviene la chiamata
   getApi():Observable<Albums[]>{
     return this.http.get<Albums[]>(this.endpoint)
   }
