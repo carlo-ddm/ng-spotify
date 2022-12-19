@@ -2,8 +2,18 @@
   <div *ngFor="let item of mus">
     <div class="cd-card" *ngIf="display(item.genre)">
       <img [src]="item.poster" [alt]="item.poster" />
-      <div>{{ item.title | uppercase }}</div>
-      <div>{{ item.author }}</div>
+      <div class="my-1">{{ item.title | uppercase }}</div>
+      <div>
+        <span class="gray">
+          {{ item.author }}
+        </span>
+      </div>
+
+      <div>
+        <span class="gray">
+          {{ item.year }}
+        </span>
+      </div>
     </div>
   </div>
 </main>
