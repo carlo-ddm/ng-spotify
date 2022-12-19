@@ -1,39 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-
 import { HttpService } from 'src/app/services/http.service';
-
 import { Albums } from 'src/app/interfaces/albums';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
-
+export class MainComponent implements OnInit, OnChanges {
   constructor(private http: HttpService){}
 
-  music:Albums[] = []
+  value:string = this.http.value
 
-  ngOnInit(): void {
-    this.getApi()
+  ngOnChanges(changes: SimpleChanges): void {
   }
 
-  getApi(){
-    this.http.getApi().subscribe({
-      next:(data:any)=>{
-        this.music = data.response
-        console.log(this.music);
-      },
+  @Input() mus!: Albums[];
 
-      complete:()=>{
-        console.log('complete');
-      },
+  ngOnInit(): void {
+  }
 
-      error:()=>{
-        console.log('error');
-      }
-    })
+  display(genre: string){
+    if (this.http.value == genre || this.http.value == null) {
+      return true
+    }
+    else {
+      return false
+    }
   }
 
 

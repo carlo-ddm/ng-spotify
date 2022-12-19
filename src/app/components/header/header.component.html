@@ -1,1 +1,13 @@
-<p>header works!</p>
+<header class="d-flex justify-content-between align-items-center p-3">
+  <div>
+    logo
+  </div>
+  <div>
+    <select #genre name="" id="" (change)="getValue(genre.value)" >
+      <option
+      *ngFor="let genre of genres"
+      >{{genre}}</option>
+    </select>
+  </div>
+</header>
+

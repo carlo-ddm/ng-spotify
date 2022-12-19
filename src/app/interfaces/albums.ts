@@ -1,3 +1,7 @@
 export interface Albums {
-  author: string,
+  poster: string,
+  title:string,
+  author:string,
+  genre: string,
+  year: string
 }

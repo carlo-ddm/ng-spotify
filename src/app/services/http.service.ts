@@ -14,7 +14,11 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  endpoint = 'https://flynn.boolean.careers/exercises/api/array/music'
+  endpoint = 'https://flynn.boolean.careers/exercises/api/array/music';
+
+  value!:string;
+
+  music:Albums[] = [];
 
   // Concettualente, è nel servizio che avviene la chiamata
   getApi():Observable<Albums[]>{

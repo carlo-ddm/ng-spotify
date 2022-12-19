@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
+import {MatSelectModule} from '@angular/material/select';
 
 // Http Service
 import { HttpService } from './services/http.service';
@@ -19,12 +20,14 @@ import { HttpClientModule} from '@angular/common/http';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
